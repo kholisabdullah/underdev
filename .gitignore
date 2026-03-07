@@ -1,0 +1,8 @@
+*.db
+*.db-journal
+*.log
+*.bak
+.env
+node_modules/
+.DS_Store
+.idea/

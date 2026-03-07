@@ -1,0 +1,4 @@
+shell=bash
+enable=all
+# Don't warn about printf-style format strings used in color codes
+disable=SC2059
