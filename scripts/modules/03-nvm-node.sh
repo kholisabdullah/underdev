@@ -2,7 +2,7 @@
 # 03-nvm-node.sh — Install nvm and Node.js LTS
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-# shellcheck source=/dev/null
+# shellcheck source=scripts/common.sh
 source "${SCRIPT_DIR}/../common.sh"
 
 NVM_VERSION="0.39.7"

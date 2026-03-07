@@ -3,7 +3,7 @@
 # Does NOT compile PHP versions — use install-versions.sh for that
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-# shellcheck source=/dev/null
+# shellcheck source=scripts/common.sh
 source "${SCRIPT_DIR}/../common.sh"
 
 show_help() {

@@ -3,3 +3,5 @@ enable=all
 external-sources=true
 # Don't warn about printf-style format strings used in color codes
 disable=SC2059
+# parse_common_flags is intentionally called in || condition for --help handling
+disable=SC2310

@@ -2,7 +2,7 @@
 # 05-caddy.sh — Install Caddy, configure sites directory and sudoers
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-# shellcheck source=/dev/null
+# shellcheck source=scripts/common.sh
 source "${SCRIPT_DIR}/../common.sh"
 
 show_help() {
