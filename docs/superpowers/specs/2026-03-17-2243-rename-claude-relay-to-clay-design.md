@@ -12,7 +12,7 @@ Live/operational files only. Historical plan documents (`docs/plans/`) are left 
 
 ## Files to update
 
-### 1. `README.md` (7 references)
+### 1. `README.md` (~10 occurrences across 6 lines)
 
 - GitHub links: `chadbyte/claude-relay` -> `chadbyte/clay`
 - Display text: "claude-relay" -> "clay"
