@@ -17,7 +17,7 @@ You talk to Claude from your phone. Claude creates worktrees, spins up preview e
 - **Git worktrees** with automatic preview environments (e.g. `feat-auth-project.underdev.cloud`)
 - **[phpenv](https://github.com/phpenv/phpenv) + [nvm](https://github.com/nvm-sh/nvm)** for instant version switching — 1 second vs 4-8 min Docker rebuild, 0MB overhead vs 200MB per container
 - **PHP-FPM** with per-version socket routing via Caddy
-- **[claude-relay](https://github.com/chadbyte/claude-relay)** for mobile development — control Claude Code from your phone or tablet via a PIN-protected PWA
+- **[clay](https://github.com/chadbyte/clay)** for mobile development — control Claude Code from your phone or tablet via a PIN-protected PWA
 - **SQLite registry** for worktree state, port allocation, and resource monitoring
 - **Database isolation** — copy or share databases per worktree, with a "fix later" escape hatch
 - **Discord alerts** when RAM exceeds configurable thresholds
@@ -38,7 +38,7 @@ Docker is great for production. We use it on our database VPS via Coolify. But f
 ## Mobile Workflow
 
 ```
-Open Claude Relay PWA on your phone or tablet
+Open Clay PWA on your phone or tablet
 Select root project folder
 
 You (phone): "Create worktree for project1 branch feat-auth"
@@ -46,10 +46,10 @@ Claude:       [Runs init script]
 Claude:       "Done — https://feat-auth-project1.underdev.cloud (port 8001)"
 ```
 
-Claude Code runs on the VPS. You connect via **[claude-relay](https://github.com/chadbyte/claude-relay)** — a zero-install PWA with PIN auth and push notifications for permission prompts
+Claude Code runs on the VPS. You connect via **[clay](https://github.com/chadbyte/clay)** — a zero-install PWA with PIN auth and push notifications for permission prompts
 
 ## Usage
-Open Claude Relay PWA on your phone or tablet, select root project folder, and create worktrees via [claude-relay](https://github.com/chadbyte/claude-relay) terminal.
+Open Clay PWA on your phone or tablet, select root project folder, and create worktrees via [clay](https://github.com/chadbyte/clay) terminal.
 
 ```bash
 # Create a worktree (or ask Claude to do it)
@@ -78,14 +78,14 @@ cleanup-worktree.sh my-project feature/auth
 Caddy (reverse proxy, auto-HTTPS)
   ├── feat-auth-project1.underdev.cloud -> PHP-FPM 8.3 -> worktree/public
   ├── fix-bug-project2.underdev.cloud  -> PHP-FPM 8.2 -> worktree/public
-  └── claude-relay.underdev.cloud      -> localhost:2633
+  └── clay.underdev.cloud              -> localhost:2633
 
 PHP-FPM (one pool per version)
   ├── php8.3-fpm.sock
   └── php8.2-fpm.sock
 
 Supervisor (user-level, no root)
-  ├── claude-relay
+  ├── clay
   └── node dev servers (if needed)
 
 SQLite (~/projects/worktrees.db)
@@ -109,7 +109,7 @@ Network
 06  Supervisor (user-level)
 07  Tailscale VPN
 08  Claude Code
-09  claude-relay
+09  clay
 10  Project structure + SQLite init
 11  Shell integration (PATH, aliases)
 ```

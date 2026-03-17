@@ -31,7 +31,7 @@ Modules:
   06  Supervisor (user-level)
   07  Tailscale VPN
   08  Claude Code
-  09  claude-relay (auto-install)
+  09  clay (auto-install)
   10  Project structure + SQLite init
   11  Shell integration (PATH, aliases)
 

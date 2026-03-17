@@ -12,7 +12,7 @@ show_help() {
 Usage: 03-nvm-node.sh [--dry-run] [--help]
 
 Installs nvm and Node.js LTS. Node is installed immediately
-(not deferred) because Claude Code and claude-relay require it.
+(not deferred) because Claude Code and clay require it.
 HELP
 }
 
