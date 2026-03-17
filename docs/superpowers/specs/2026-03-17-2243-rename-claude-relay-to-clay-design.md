@@ -25,9 +25,10 @@ Live/operational files only. Historical plan documents (`docs/plans/`) are left 
 
 - Module label: `09  claude-relay (auto-install)` -> `09  clay (auto-install)`
 
-### 3. `scripts/modules/09-clay.sh` (0 remaining changes)
+### 3. `scripts/modules/09-clay.sh` (1 bug fix)
 
-- Already fully updated in unstaged changes. Needs staging only.
+- Already mostly updated in unstaged changes. Needs staging.
+- Bug fix: detection check uses `npm list -g clay` but actual package is `clay-server`. Change to `npm list -g clay-server`.
 
 ## Out of scope
 
