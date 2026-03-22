@@ -231,7 +231,7 @@ Replace with:
 Open the Happy app on your phone or tablet, select a session, and start coding with Claude Code.
 ```
 
-- [ ] **Step 6: Update the architecture diagram (line 81)**
+- [ ] **Step 5: Update the architecture diagram (line 81)**
 
 Find:
 ```
@@ -240,7 +240,7 @@ Find:
 
 Delete this line entirely (Happy uses public relay — no Caddy vhost).
 
-- [ ] **Step 7: Update the Supervisor process list (line 88)**
+- [ ] **Step 6: Update the Supervisor process list (line 88)**
 
 Find:
 ```
@@ -249,7 +249,7 @@ Find:
 
 Delete this line entirely (Happy needs no Supervisor daemon).
 
-- [ ] **Step 8: Update the modules list (line 112)**
+- [ ] **Step 7: Update the modules list (line 112)**
 
 Find:
 ```
@@ -261,7 +261,7 @@ Replace with:
 09  happy-coder
 ```
 
-- [ ] **Step 9: Verify no clay references remain (case-insensitive)**
+- [ ] **Step 8: Verify no clay references remain (case-insensitive)**
 
 ```bash
 grep -ni "clay" README.md
