@@ -31,7 +31,7 @@ Modules:
   06  Supervisor (user-level)
   07  Tailscale VPN
   08  Claude Code
-  09  clay (auto-install)
+  09  happy-coder (mobile access)
   10  Project structure + SQLite init
   11  Shell integration (PATH, aliases)
 
@@ -124,6 +124,18 @@ info "  1. Source your shell:  source ~/.bashrc"
 info "  2. Install PHP/Node versions:  bash scripts/install-versions.sh"
 info "  3. Start building!"
 echo ""
+
+# Happy Coder auth — run interactively after all modules complete
+# Skip in dry-run: this is an interactive QR pairing step, not idempotent
+if [[ "${DRY_RUN}" != "true" ]]; then
+    # nvm must be sourced: the parent shell doesn't inherit it from module subprocesses
+    export NVM_DIR="${HOME}/.nvm"
+    [[ -s "${NVM_DIR}/nvm.sh" ]] && source "${NVM_DIR}/nvm.sh"
+    info "Pairing Happy Coder with your mobile app..."
+    info "Scan the QR code below with the Happy app on your phone."
+    echo ""
+    happy --auth || true
+fi
 
 if [[ "${FAILED}" -gt 0 ]]; then
     warn "Failed modules: ${FAILED_MODULES[*]}"
