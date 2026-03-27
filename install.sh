@@ -5,6 +5,16 @@
 
 set -euo pipefail
 
+# When piped via `curl | bash`, BASH_SOURCE[0] is unbound and no other files
+# exist on disk. Clone the repo to a temp dir and re-execute from there.
+if [[ -z "${BASH_SOURCE[0]:-}" ]] || [[ "$(basename "${BASH_SOURCE[0]:-bash}")" == "bash" ]]; then
+    REPO_URL="https://github.com/kholisabdullah/underdev"
+    TMP_DIR="$(mktemp -d)"
+    echo "Cloning installer to ${TMP_DIR} ..."
+    git clone --depth=1 "${REPO_URL}" "${TMP_DIR}/underdev"
+    exec bash "${TMP_DIR}/underdev/install.sh" "$@"
+fi
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=scripts/common.sh
 source "${SCRIPT_DIR}/scripts/common.sh"
