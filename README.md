@@ -1,10 +1,10 @@
 # UnderDev
 
-Agentic development environment for a VPS for Laravel or Node.js projects. Spin up isolated preview environments in 1-2 minutes, manage them via mobile, and let Claude do the heavy lifting — all on a RAM-constrained VPS with no Docker overhead.
+Agentic development environment for Laravel or Node.js projects in VPS. Spin up isolated preview environments in 1-2 minutes, manage them via mobile, and let Claude do the heavy lifting — all on a RAM-constrained VPS with no Docker overhead.
 
 ```bash
 # On your Ubuntu VPS (4GB+ RAM):
-curl -fsSL https://raw.githubusercontent.com/YOUR_USER/underdev/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/kholisabdullah/underdev/main/install.sh | bash
 
 # Then install PHP/Node versions:
 bash scripts/install-versions.sh
