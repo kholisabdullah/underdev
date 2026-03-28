@@ -75,7 +75,7 @@ fi
 
 # Confirm
 if [[ "${DRY_RUN}" != "true" ]]; then
-    read -rp "Proceed with installation? (y/N) " confirm
+    read -rp "Proceed with installation? (y/N) " confirm </dev/tty
     if [[ ! "${confirm}" =~ ^[Yy]$ ]]; then
         info "Installation cancelled."
         exit 0
