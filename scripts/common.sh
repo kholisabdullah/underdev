@@ -62,7 +62,6 @@ assert_min_ram() {
     local total_mb
     total_mb=$(awk '/MemTotal/ {printf "%d", $2/1024}' /proc/meminfo 2>/dev/null || echo "0")
     if [[ "${total_mb}" -lt "${min_mb}" ]]; then
-        error "Minimum ${min_mb}MB RAM required. Found: ${total_mb}MB."
-        exit 1
+        warn "RAM is ${total_mb}MB (recommended: ${min_mb}MB+). Installation may be slow or fail on memory-intensive steps."
     fi
 }
